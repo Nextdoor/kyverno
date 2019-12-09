@@ -71,7 +71,7 @@ func TlsCertificateGenerateRequest(privateKey *rsa.PrivateKey, props TlsCertific
 
 	csrTemplate := x509.CertificateRequest{
 		Subject: pkix.Name{
-			CommonName: props.Service, //commonName,
+			CommonName: dnsNames[1], //commonName,
 		},
 		SignatureAlgorithm: x509.SHA256WithRSA,
 		DNSNames:           dnsNames,
